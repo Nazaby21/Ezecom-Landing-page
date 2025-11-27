@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Header</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/d9ad53b8e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-[Poppins]">
+    <header>
+      <!-- NAVBAR -->
+      <nav class="bg-[#6F4B98] w-full border-default">
+        <div
+          class="max-w-screen-xl flex items-center justify-between mx-auto p-2"
+        >
+          <div class="flex-1"></div>
+
+          <div class="flex items-center gap-6">
+            <ul
+              class="hidden md:flex items-center gap-6 text-sm text-white me-10"
+            >
+              <li><a href="#" class="hover:text-fg-brand">Personal</a></li>
+              <li><a href="#" class="hover:text-fg-brand">Business</a></li>
+              <li><a href="#" class="hover:text-fg-brand">About Us</a></li>
+              <li><a href="#" class="hover:text-fg-brand">Offices</a></li>
+            </ul>
+
+            <!-- BUTTONS -->
+            <div class="md:flex items-center gap-2">
+              <a
+                href="#"
+                class="text-sm bg-[#4d3075] hover:bg-[#7A59A1] text-white border border-[#4d3075] py-1 px-3 rounded-b-md transition"
+              >
+                Login
+              </a>
+              <a
+                href="#"
+                class="text-sm bg-[#6F4B98] hover:bg-[#7A59A1] text-white border border-[#6F4B98] py-1 px-3 rounded-b-md transition"
+              >
+                Register
+              </a>
+              <a
+                href="#"
+                class="text-sm bg-[#a086bd] hover:bg-[#7A59A1] text-white border border-[#a086bd] py-1 px-3 rounded-b-md transition"
+              >
+                Pay my bill
+              </a>
+            </div>
+
+            <!-- HAMBURGER BUTTON -->
+            <button
+              data-drawer-target="left-sidebar"
+              data-drawer-show="left-sidebar"
+              aria-controls="left-sidebar"
+              type="button"
+              class="md:hidden inline-flex items-center justify-center w-10 h-7 p-1 text-white rounded-full hover:bg-[#7A59A1]"
+            >
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                  d="M5 7h14M5 12h14M5 17h14"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="bg-[#4d3075] text-white pt-4 pb-6">
+          <div
+            class="max-w-screen-xl mx-auto flex md:justify-between items-center"
+          >
+            <!-- Left Side -->
+            <div class="left-side flex items-center gap-6 ml-3 md:ml-0">
+              <div class="logo">
+                <img
+                  src="image/ezecom-logo.svg"
+                  class="h-auto w-36"
+                  alt="Ezecom Logo"
+                />
+              </div>
+              <ul class="hidden md:flex text-sm">
+                <li
+                  class="text-sm hover:bg-[#7A59A1] text-white py-1 px-3 rounded-md transition"
+                >
+                  Enterprise
+                </li>
+                <li
+                  class="text-sm hover:bg-[#7A59A1] text-white py-1 px-3 rounded-md transition"
+                >
+                  SME
+                </li>
+                <li
+                  class="text-sm hover:bg-[#7A59A1] text-white py-1 px-3 rounded-md transition"
+                >
+                  My Account
+                </li>
+                <li
+                  class="text-sm hover:bg-[#7A59A1] text-white py-1 px-3 rounded-md transition"
+                >
+                  Support
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right Side -->
+            <div class="right-side hidden md:flex">
+              <div class="w-[200px]">
+                <div class="relative">
+                  <input
+                    type="text"
+                    placeholder="Search"
+                    class="w-full py-1 pl-4 pr-10 rounded-full text-sm text-gray-700 focus:outline-none"
+                  />
+                  <div
+                    class="absolute inset-y-0 right-4 flex items-center pointer-events-none"
+                  >
+                    <i class="fa-solid fa-magnifying-glass text-gray-600"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        id="left-sidebar"
+        class="fixed inset-0 z-40 w-full h-full p-4 overflow-y-auto bg-[#6f4b98] transition-transform -translate-x-full"
+        tabindex="-1"
+      >
+        <!-- CLOSE BUTTON -->
+        <button
+          type="button"
+          data-drawer-hide="left-sidebar"
+          aria-controls="left-sidebar"
+          class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-white hover:bg-[#5b3d85] rounded-full"
+        >
+          ✕
+        </button>
+
+        <!-- SEARCH BAR -->
+        <div class="mt-10 mb-8 w-full">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Search"
+              class="w-full py-3 pl-4 pr-10 rounded-full text-sm text-gray-700 focus:outline-none"
+            />
+            <div
+              class="absolute inset-y-0 right-4 flex items-center pointer-events-none"
+            >
+              <i class="fa-solid fa-magnifying-glass text-gray-600"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIDEBAR MENU -->
+        <ul class="space-y-6 text-white text-base">
+          <!-- Personal -->
+          <li class="flex justify-between items-center">
+            <a href="#" class="hover:text-gray-200">Personal</a>
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+          </li>
+
+          <!-- Business -->
+          <li class="flex justify-between items-center">
+            <a href="#" class="hover:text-gray-200">Business</a>
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+          </li>
+
+          <!-- About Us -->
+          <li class="flex justify-between items-center">
+            <a href="#" class="hover:text-gray-200">About Us</a>
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+          </li>
+
+          <!-- Offices -->
+          <li class="flex justify-between items-center">
+            <a href="#" class="hover:text-gray-200">Offices</a>
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="hero-banner">
+        <img src="image/banner-2.jpg" class="hidden md:block" alt="banner" />
+        <img
+          src="image/banner-img.jpg"
+          class="block md:hidden w-full"
+          alt="banner"
+        />
+      </section>
+      <section class="product my-14">
+        <div class="container flex justify-center items-center h-full my-5">
+          <h2 class="text-center text-[#6f4b98] text-4xl font-bold">
+            Product & Service
+          </h2>
+        </div>
+
+        <div class="flex justify-center gap-4 flex-wrap">
+          <!-- Card 1 -->
+          <div
+            class="w-[300px] bg-[#dfe0e2] rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+          >
+            <div class="p-4">
+              <h3 class="text-xl font-semibold my-3 text-center">Internet</h3>
+              <p class="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+                voluptatum dolorem id atque voluptatem harum unde. Lorem ipsum
+                dolor sit, amet consectetur adipisicing elit. Fugiat autem
+                molestias eaque iste commodi asperiores iure quaerat itaque
+                facere atque!
+              </p>
+              <button
+                class="bg-[#4d3075] text-white px-4 py-2 rounded-full hover:bg-[#7a59a1] transition"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="w-[300px] bg-[#dfe0e2] rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+          >
+            <div class="p-4">
+              <h3 class="text-xl font-semibold my-3 text-center">
+                Enterprise Network
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+                voluptatum dolorem id atque voluptatem harum unde. Lorem ipsum,
+                dolor sit amet consectetur adipisicing elit. Modi quas quidem
+                culpa doloremque ex non repudiandae, optio unde recusandae
+                possimus.
+              </p>
+              <button
+                class="bg-[#4d3075] text-white px-4 py-2 rounded-full hover:bg-[#7a59a1] transition"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact bg-[#6F4B98] py-10">
+        <div class="h-full max-w-4xl mx-auto">
+          <h2 class="text-center text-white text-4xl font-bold mb-6">
+            Let's Talk
+          </h2>
+
+          <p class="text-center text-xl text-white mb-10 px-4">
+            We love to reach out to you. Please do contact us at 085 888 181 or
+            kindly fill the form below, for us to get back to you.
+          </p>
+
+          <!-- FORM -->
+          <form
+            class="space-y-6 bg-white/10 backdrop-blur-sm p-6 rounded-2xl"
+          >
+            <!-- Full Name -->
+            <div>
+              <label class="text-white font-semibold">Full Name</label>
+              <input
+                type="text"
+                class="w-full mt-2 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <!-- Email & Contact -->
+            <div class="md:flex gap-4">
+              <!-- Email -->
+              <div class="flex-1 mb-6 md:mb-0">
+                <label class="text-white font-semibold">Email</label>
+                <input
+                  type="email"
+                  class="w-full mt-2 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <!-- Contact Number -->
+              <div class="flex-1">
+                <label class="text-white font-semibold">Contact Number</label>
+                <input
+                  type="text"
+                  class="w-full mt-2 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+            </div>
+
+            <!-- Comment -->
+            <div>
+              <label class="text-white font-semibold">Comment</label>
+              <textarea
+                rows="4"
+                class="w-full mt-2 p-3 rounded-lg min-h-28 max-h-[500px] focus:outline-none focus:ring-2 focus:ring-white"
+                placeholder="Write your message here..."
+              ></textarea>
+            </div>
+
+            <!-- Button -->
+            <button
+              type="submit"
+              class="w-full bg-white text-[#6F4B98] font-bold py-3 rounded-lg hover:bg-gray-200 transition"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div
+        class="social max-w-7xl mx-auto py-5 px-4 flex flex-col md:flex-row md:justify-between md:items-center"
+      >
+        <!-- Social Icons -->
+        <div class="icon flex flex-wrap gap-3 mb-4 md:mb-0">
+          <a href="#"><i class="fa-brands fa-facebook text-2xl"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram text-2xl"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube text-2xl"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter text-2xl"></i></a>
+          <a href="#"><i class="fa-brands fa-telegram text-2xl"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok text-2xl"></i></a>
+        </div>
+
+        <!-- Download Links -->
+        <div class="download flex flex-wrap gap-3 items-center">
+          <p class="text-left">Download Ezecom App</p>
+          <a href="#"><i class="fa-brands fa-apple text-2xl"></i></a>
+          <a href="#"><i class="fa-brands fa-google-play text-2xl"></i></a>
+        </div>
+      </div>
+
+      <div
+        class="footer-nav max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-8"
+      >
+        <!-- Enterprise -->
+        <div class="footer-section">
+          <h5 class="font-semibold text-[#4d3075] mb-3">Enterprise</h5>
+          <div class="flex flex-col gap-1">
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >Internet</a
+            >
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >Enterprise Network</a
+            >
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >DPLC</a
+            >
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >MPLS</a
+            >
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >VPLS</a
+            >
+          </div>
+        </div>
+
+        <!-- SME -->
+        <div class="footer-section">
+          <h5 class="font-semibold text-[#4d3075] mb-3">SME</h5>
+          <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+            >Internet</a
+          >
+        </div>
+
+        <!-- My Account -->
+        <div class="footer-section">
+          <h5 class="font-semibold text-[#4d3075] mb-3">My Account</h5>
+          <div class="flex flex-col gap-1">
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >MyEze</a
+            >
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >Invoices</a
+            >
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >Payment</a
+            >
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >My Orders</a
+            >
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >Change My Package</a
+            >
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-section">
+          <h5 class="font-semibold text-[#4d3075] mb-3">Support</h5>
+          <div class="flex flex-col gap-1">
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >Technical Support</a
+            >
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >FAQ</a
+            >
+            <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+
+        <!-- Offices -->
+        <div class="footer-section">
+          <h5 class="font-semibold text-[#4d3075] mb-3">Offices</h5>
+          <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+            >Branch Point</a
+          >
+        </div>
+
+        <!-- Register -->
+        <div class="footer-section">
+          <h5 class="font-semibold text-[#4d3075] mb-3">Register</h5>
+          <a href="#" class="text-[#4d3075] hover:text-[#6f4b98] transition"
+            >Privacy Policy</a
+          >
+        </div>
+
+        <!-- Pay my bill -->
+        <div class="footer-section">
+          <h5 class="font-semibold text-[#4d3075] mb-3">Pay my bill</h5>
+        </div>
+      </div>
+      <div class="py-2 bg-[#6F4B98]">
+        <p class="max-w-7xl mx-auto text-xs text-white">
+          © EZECOM Co., Ltd. All Rights Reserved
+        </p>
+      </div>
+    </footer>
+    <!-- FLOWBITE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite/dist/flowbite.min.js"></script>
+  </body>
+</html>
