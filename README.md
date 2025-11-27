@@ -33,7 +33,7 @@
 
 ---
 
-## 📦 Technologies Used
+## Technologies Used
 
 - **HTML5**
 - **Tailwind CSS**
